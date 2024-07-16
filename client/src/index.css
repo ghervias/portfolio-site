@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.hidden-text {
+  visibility: hidden; /* Hide text by default */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Smooth transition for opacity */
+}
+
+.paper-hover:hover .hidden-text {
+  visibility: visible; /* Make text visible when parent is hovered */
+  opacity: 1;
+}
+
+.darken-on-hover {
+  transition: filter 0.3s ease-in-out; /* Adjust time as needed */
+  filter: brightness(100%); /* Default state */
+}
+
+.darken-on-hover:hover {
+  filter: brightness(70%); /* Darken effect */
+}
