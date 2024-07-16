@@ -44,12 +44,7 @@ const StyledTab = styled((props) => <Tab sx={{alignItems: 'start' }} disableRipp
     }),
 );
 
-export default function CustomizedTabs() {
-    const [value, setValue] = React.useState(0);
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
+export default function CustomizedTabs({ value, handleChange }) {
 
     return (
         <Box sx={{ width: '100%' }}>

@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import { height } from '@mui/system';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from './Home';
+import TabBrowser from './Home';
 import Navbar from './Navbar';
 
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
       <Navbar />
       <Box sx={{ display: 'flex', flexGrow: 1, justifyContent: 'center' }} >
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<TabBrowser />} />
         </Routes>
       </Box>
     </Box>

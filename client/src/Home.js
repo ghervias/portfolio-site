@@ -7,27 +7,21 @@ import Affect from './assets/affect.png'
 import Image from 'mui-image'
 import './index.css'
 
-
-function Home() {
+function Projects() {
     const imageSource = Gaeia;
 
-    return (
-        <Box sx={{ display: 'flex', flexGrow: 1 }} style={{}}>
-            <Grid container sx={{ paddingLeft: '5rem', paddingBottom: '2rem' }}>
-                <Grid item sx={{ display: 'flex', alignItems: "center", paddingBottom: '7rem' }} xs={2}>
-                    <CustomizedTabs></CustomizedTabs>
-                </Grid>
+    return(
                 <Grid item xs={9} sx={{ display: 'flex', maxWidth: "100%", display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     {/* <Grid container spacing={0} sx={{ paddingTop: '1.5rem', paddingLeft: '4rem', paddingRight: '4rem', paddingBottom: '1rem', display: 'flex', flexGrow: 0 }}> */}
                     <Grid container spacing={0} sx={{ height: '95%', width: '85%', display: 'flex', flexGrow: 0 }}>
                         <Grid item xs={4} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <Card className="paper-hover" sx={{
+                            <Paper onClick={() => alert("hello")} className="paper-hover" sx={{
                                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', "&:hover": { boxShadow: 6 },
                                 height: '10rem', width: '15rem', overflow: 'hidden'
                             }}>
                                 <Typography variant='hoverText' className="hidden-text" style={{ zIndex: 10, position: 'absolute' }}>GAEIA Teams</Typography>
                                 <img className="darken-on-hover" src={Gaeia} alt="Description" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                            </Card>
+                            </Paper>
                         </Grid>
                         <Grid item xs={4} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <Paper className="paper-hover" sx={{
@@ -103,9 +97,31 @@ function Home() {
                         </Grid>
                     </Grid>
                 </Grid>
+    )
+}
 
+function TabBrowser() {
+
+    const [value, setValue] = React.useState(0);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
+    return (
+        <Box sx={{ display: 'flex', flexGrow: 1 }} style={{}}>
+            <Grid container sx={{ paddingLeft: '5rem', paddingBottom: '2rem' }}>
+                <Grid item sx={{ display: 'flex', alignItems: "center", paddingBottom: '7rem' }} xs={2}>
+                    <CustomizedTabs value={value} handleChange={handleChange}></CustomizedTabs>
+                </Grid>
+                { value == 0 && <Projects></Projects>}
+                { value == 1 && <Typography>cv</Typography>}
+                { value == 2 && <Typography>certifications</Typography>}
+                { value == 3 && <Typography>about me</Typography>}
             </Grid>
         </Box>
     );
 };
-export default Home;
+
+
+export default TabBrowser;
