@@ -5,7 +5,7 @@ const theme = createTheme({
         hoverText: {
             "fontFamily": `"PT Serif", serif;`,
             fontSize: '1.5rem',
-            color: 'white',
+
         },
         "fontFamily": `"PT Serif", serif;`,
         "fontSize": '3rem',
